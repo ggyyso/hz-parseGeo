@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>激活邮件</title>
+</head>
+<body>
+<p>您好！</p>
+<p>感谢您注册天地图！请点击下面的链接以激活帐号：</p>
+<p>
+    <underline><a
+            th:href="@{http://shaanxi.tianditu.gov.cn:8080/portal/user/{type}/active/{id}(type=${type},id=${id})}"
+            th:text="@{http://shaanxi.tianditu.gov.cn:8080/portal/user/{type}/active/{id}(type=${type},id=${id})}"
+            rel="noopener" target="_blank"></a></underline>
+</p>
+<p><span color="gray">（如果您无法点击此链接，请将它复制到浏览器地址栏后访问；为了保障您帐号的安全性，请在 48小时内完成激活，此链接将在您激活过一次后失效！）</span></p><br>
+<p>天地图陕西</p>
+<p th:text="@{{time}(time=${time})}"></p>
+</body>
+</html>
