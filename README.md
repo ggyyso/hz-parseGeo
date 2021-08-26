@@ -32,7 +32,7 @@ Teigha File Converter是一款简便实用的CAD文件转换工具，可以进�
 
 执行命令行代码为：
 ```
-"C:\Program Files (x86)\ODA\Teigha File Converter 4.3.2\TeighaFileConverter.exe" "D://SXGIS//2021//汉中国土空间平台" "D://SXGIS//2021" ACAD2018 DXF 0 0
+"C:\Program Files (x86)\ODA\Teigha File Converter 4.3.2\TeighaFileConverter.exe" "D://GIS//2021//测试" "D://SXGIS//2021" ACAD2018 DXF 0 0
 ```
 第二种 使用apose.cad库
 --------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ Teigha File Converter是一款简便实用的CAD文件转换工具，可以进�
 //        gdal.SetConfigOption("GDAL_FILENAME_IS_UTF8", "YES");
         gdal.SetConfigOption("SHAPE_ENCODING", "");
         gdal.SetConfigOption("DXF_ENCODING", "ASCII"); //设置DXF缺省编码
-//    String strVectorFile = "D:\\SXGIS\\2021\\汉中国土空间平台\\dwgR2000.DWG";
+//    String strVectorFile = "D:\\GIS\\2021\\测试\\dwgR2000.DWG";
 //        DataSource ds= dr.Open(strVectorFile);
         String strVectorFile = "D:\\sxgis\\2021\\示例CAD文件_高斯大地坐标系_中国2000_36带3_北2.dxf";
         DataSource ds = ogr.Open(strVectorFile, 0);
