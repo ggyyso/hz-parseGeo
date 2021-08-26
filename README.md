@@ -31,22 +31,25 @@ Teigha File Converter是一款简便实用的CAD文件转换工具，可以进�
 或使用命令行进行代码调用，调用格式如下。
 
 执行命令行代码为：
+```
 "C:\Program Files (x86)\ODA\Teigha File Converter 4.3.2\TeighaFileConverter.exe" "D://SXGIS//2021//汉中国土空间平台" "D://SXGIS//2021" ACAD2018 DXF 0 0
-
+```
 第二种 使用apose.cad库
 --------------------------------------------------------------------------------
-
-       //apose.cad 将dwg转dxf  中文会存在乱码，考虑能否设置输出编码
+```
+  //apose.cad 将dwg转dxf  中文会存在乱码，考虑能否设置输出编码
   String inputFile = "D:\\SXGIS\\2021\\汉中国土空间平台\\kcd.dwg";
   String outFile = "D:\\Line.dxf";
   CadImage cadImage = (CadImage) Image.load(inputFile);
   int i=  cadImage.getFileEncoding();
   cadImage.save(outFile);
-
+```
 第二步，将dxf文件转为geojson 采用gdal库
 使用gdal将dxf 解析为geojson，部署java gdal环境，见gdal部署环境。
 --------------------------------------------------------------------------------
 
+
+```
 /**
      * dwg转geojson
      * @param args
@@ -57,8 +60,7 @@ Teigha File Converter是一款简便实用的CAD文件转换工具，可以进�
 
         ogr.RegisterAll();
 //    Driver dr=ogr.GetDriverByName("CAD");
-//
-        gdal.SetConfigOption("GDAL_FILENAME_IS_UTF8", "YES");
+//        gdal.SetConfigOption("GDAL_FILENAME_IS_UTF8", "YES");
         gdal.SetConfigOption("SHAPE_ENCODING", "");
         gdal.SetConfigOption("DXF_ENCODING", "ASCII"); //设置DXF缺省编码
 //    String strVectorFile = "D:\\SXGIS\\2021\\汉中国土空间平台\\dwgR2000.DWG";
@@ -80,5 +82,6 @@ Teigha File Converter是一款简便实用的CAD文件转换工具，可以进�
         dv.CopyDataSource(ds, "D:\\Dgn.geojson");
         System.out.println("转换成功！");
     }
+```
 
 
