@@ -38,7 +38,7 @@ Teigha File Converter是一款简便实用的CAD文件转换工具，可以进�
 --------------------------------------------------------------------------------
 ```
   //apose.cad 将dwg转dxf  中文会存在乱码，考虑能否设置输出编码
-  String inputFile = "D:\\SXGIS\\2021\\汉中国土空间平台\\kcd.dwg";
+  String inputFile = "D:\\GIS\\2021\\测试\\kcd.dwg";
   String outFile = "D:\\Line.dxf";
   CadImage cadImage = (CadImage) Image.load(inputFile);
   int i=  cadImage.getFileEncoding();
@@ -65,7 +65,7 @@ Teigha File Converter是一款简便实用的CAD文件转换工具，可以进�
         gdal.SetConfigOption("DXF_ENCODING", "ASCII"); //设置DXF缺省编码
 //    String strVectorFile = "D:\\GIS\\2021\\测试\\dwgR2000.DWG";
 //        DataSource ds= dr.Open(strVectorFile);
-        String strVectorFile = "D:\\sxgis\\2021\\示例CAD文件_高斯大地坐标系_中国2000_36带3_北2.dxf";
+        String strVectorFile = "D:\\gis\\2021\\示例CAD文件_高斯大地坐标系_中国2000_36带3_北2.dxf";
         DataSource ds = ogr.Open(strVectorFile, 0);
         if (ds == null) {
             System.out.println("打开文件失败！");
